@@ -77,15 +77,13 @@ int main(void)
 	PWM_on();
 	set_PWM(530);
 	unsigned char Value = 0;
-	//PORTA = 0x01;
+	
 	while (1)
 	{
 		Value = SPI_received_data;
 		if(Value == 1)
 		{
 			set_PWM(950);
-			_delay_ms(1000);
-			set_PWM(0);
 			_delay_ms(1000);
 		}
 		if(Value == 0)
